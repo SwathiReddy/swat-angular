@@ -1,0 +1,61 @@
+<fieldset>
+      <legend>Sign Up</legend>
+      <form name='regForm' novalidate>
+
+        <input type="text" name="firstname" placeholder="First name"
+          ng-model="reg.user.firstname"
+          required
+          ng-minlength="1">
+          <br>
+          <span
+            ng-if="(regForm.firstname.$error.minlength || regForm.firstname.$error.required) && regForm.firstname.$touched">
+            First name cannot be blank
+          </span>
+          <br>
+
+          <input type="text" name="lastname" placeholder="Last name"
+            ng-model="reg.user.lastname"
+            required
+            ng-minlength="1">
+            <br>
+            <span
+              ng-if="(regForm.lastname.$error.minlength || regForm.lastname.$error.required) && regForm.lastname.$touched">
+              Last name cannot be blank
+            </span>
+            <br>
+
+        <input type="email" name="email" placeholder="Email"
+          ng-model="reg.user.email"
+          required>
+          <br>
+          <span ng-if="regForm.email.$invalid && regForm.email.$touched">
+            Enter a valid email address: swaa@test format
+          </span>
+          <br>
+
+        <input type="text" name="phone" placeholder="Phone ###-###-####"
+          ng-model="reg.user.phone"
+          pattern="(\d{3})-(\d{3})-(\d{4})">
+          <br>
+          <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">
+            Phone number must be in the following format : ###-###-####
+          </span>
+          <br>
+
+          <input type="text" name="favItem" placeholder="Favorite Item Number, eg A1 , L1"
+            ng-model="reg.user.favItem">
+            <br>
+
+            <span
+              ng-if="reg.err">
+              No such menu category exists
+            </span>
+            <br>
+            <br>
+        <button
+          ng-disabled="regForm.$invalid"
+          ng-click="reg.submit(reg.user.favItem)">Submit</button>
+      </form>
+      <br>
+      <div id="info1" ng-if="reg.user.completed" ui-sref="public.MyInfo">Your info has been saved</div>
+    </fieldset>

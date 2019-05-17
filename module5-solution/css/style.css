@@ -1,0 +1,44 @@
+body {
+  font-size: 1.2em;
+  text-align: center
+}
+input {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: black;
+}
+button {
+  font-size: 24px;
+}
+
+.ng-touched.ng-valid {
+  border: 2px green solid;
+}
+
+.ng-touched.ng-invalid {
+  border: 2px red solid;
+}
+
+#info {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#info1 {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 25px;
+  font-style: italic;
+}
+
+ #info1[ui-sref]:hover {
+  cursor: pointer;
+  /* border: solid black 1px; */
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#m_description{
+  font-size: 15px;
+  font-style: italic;
+}
